@@ -4,25 +4,28 @@
 
 typedef unsigned char BYTE;
 
+void compress(FILE *input, FILE *output){
+  int prefix = getc(input);
+  if(prefix == EOF) return;
+  
+  int character;
+  
+  
+  
+  
+  
+}
+
 int main() {
-  FILE *f = fopen("input1.txt", "rb");
-  if(!f) exit(1);
-  
-  fseek(f, 0, SEEK_END);
-  long fSize = ftell(f);
-  fseek(f, 0, SEEK_SET);
-  
-  BYTE *buffer = calloc(fSize, sizeof(BYTE));
-  fread(buffer, 1, fSize, f);
-  fclose(f);
-  
-  printf("%s\n", buffer);
+  FILE *input = fopen("input1.txt", "rb");
+  if(!input) exit(1);
   
   
   
   
   
   
-  free(buffer);
+  
+  
   return 0;
 }
