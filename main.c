@@ -5,19 +5,21 @@
 typedef unsigned char BYTE;
 
 void compress(FILE *input, FILE *output) {
-  int prefix = getc(input);
-  if (prefix == EOF) return;
-  
-  int character;
+  fseek(input, 0, SEEK_END);
+  long size = ftell(input);
+  fseek(input, 0, SEEK_SET);
+  BYTE *buffer = calloc(size, sizeof(BYTE));
+  fread(buffer, 1, size, input);
   
   
 }
 
 void decompress(FILE *input, FILE *output) {
-  int prefix = getc(input);
-  if (prefix == EOF) return;
-  
-  int character;
+  fseek(input, 0, SEEK_END);
+  long size = ftell(input);
+  fseek(input, 0, SEEK_SET);
+  BYTE *buffer = malloc(size, sizeof(BYTE);
+  fread(buffer, 1, size, input);
   
   
 }
